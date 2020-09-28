@@ -1,5 +1,8 @@
 {
-  "name": "HomePlex",
-  "integrations": {},
+  "name": "Homeplex",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
   "type": "angular"
 }

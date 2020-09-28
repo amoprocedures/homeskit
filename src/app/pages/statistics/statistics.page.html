@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Statistics</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content >
+    <div class="f-wrapper">
+        <div class="f-box f-box-1">
+            <ion-card class="first-card" #card2>
+                <ion-card-header>
+                    <ion-card-title color="light">Total Expenditure</ion-card-title>
+                    <ion-card-subtitle color="light" >
+                        Amount : <span style="font-weight: bold"><strong> {{totalExp|number}}</strong></span>
+                    </ion-card-subtitle>
+                </ion-card-header>
+            </ion-card>
+        </div>
+        <div class="f-box f-box-2">
+            <ion-card #card>
+                <ion-card-content>
+                    <ion-list lines="full">
+<!--                        <ion-item *ngFor="let stat of [].constructor(5);let i =index" [lines]="(i===4)?'none':'full'">-->
+<!--                            <ion-avatar slot="start" class="ion-avatar-c">-->
+<!--                                <div class="centered-content" [ngStyle]="{backgroundColor: getColor(i)}">-->
+<!--                                    <p>{{'1'.substring(0, 1).toUpperCase()}}</p>-->
+<!--                                </div>-->
+<!--                            </ion-avatar>-->
+<!--                            <ion-label>-->
+<!--                                <h4 style="color: #000;">This Year</h4>-->
+<!--                                <p>3 Items</p>-->
+<!--                            </ion-label>-->
+<!--                            <ion-note slot="end">-->
+<!--                                <h4 style="line-height: 0"><strong>{{300000|number}}</strong></h4>-->
+<!--                            </ion-note>-->
+<!--                        </ion-item>-->
+                        <ion-item *ngFor="let stat of stats;let i =index" [lines]="(i===stats.length-1)?'none':'full'">
+                            <ion-avatar slot="start" class="ion-avatar-c">
+                                <div class="centered-content" [ngStyle]="{backgroundColor: getColor(i)}">
+                                    <p>{{stat.short_name.substring(0, 1).toUpperCase()}}</p>
+                                </div>
+                            </ion-avatar>
+                            <ion-label>
+                                <h4 style="color: #000;">{{stat.type}}</h4>
+                                <p>{{stat.no_of_items}} Items</p>
+                            </ion-label>
+                            <ion-note slot="end">
+                                <h4 style="line-height: 0"><strong>{{stat.total_price|number}}</strong></h4>
+                            </ion-note>
+                        </ion-item>
+                    </ion-list>
+                </ion-card-content>
+            </ion-card>
+        </div>
+    </div>
+
+</ion-content>

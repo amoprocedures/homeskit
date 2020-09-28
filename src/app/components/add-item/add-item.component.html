@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+        <div class="ion-toolbar-top" [ngStyle]="{backgroundColor:color}">
+            <ion-buttons slot="start">
+                <ion-button class="close-btn" (click)="onClose()">
+                    <ion-icon name="close" class="close-icon"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+            <ion-title class="ion-text-capitalize" style="color: #FFF;">
+                {{data.title}}
+            </ion-title>
+            <ion-note slot="end" class="ion-margin-end" color="light">{{amount | number}}</ion-note>
+        </div>
+    </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+    <form class="ion-padding" [formGroup]="form" (ngSubmit)="onSave()">
+        <ion-item>
+            <ion-label position="floating"><strong>Item Name</strong></ion-label>
+            <ion-input type="text" formControlName="name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating"><strong>Quantity</strong></ion-label>
+            <ion-input type="number" formControlName="quantity" (ionChange)="sumTotal()"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating"><strong>Unit Price</strong></ion-label>
+            <ion-input type="number" formControlName="unit_price" (ionChange)="sumTotal()"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating"><strong>Description</strong></ion-label>
+            <ion-textarea type="text" formControlName="description"></ion-textarea>
+        </ion-item>
+    </form>
+</ion-content>
+
+<ion-footer style="height: 50px;" [translucent]="true" class="ion-no-border">
+    <div class="custom-toolbar-footer" [ngStyle]="{backgroundColor:color}">
+        <ion-title color="light" (click)="onSave()" class="ion-text-center" style="font-size: 1.4em;">SAVE CHANGES
+        </ion-title>
+    </div>
+</ion-footer>

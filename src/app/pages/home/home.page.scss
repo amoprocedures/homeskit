@@ -1,0 +1,16 @@
+ion-avatar {
+  display: table;
+}
+.round-me{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 45px;
+    border-radius: 30%;
+    color: #FFF;
+}
+.dlt-icon {
+  font-size: 1.3em;
+  margin-bottom: 0.5rem;
+}

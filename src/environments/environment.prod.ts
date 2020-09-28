@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+    production: true,
+    HOME_PLEX_API: '',
+    NOTIFLIX_RGBA: ''
 };

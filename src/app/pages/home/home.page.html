@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Home</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-fab horizontal="end" vertical="bottom">
+    <ion-fab-button (click)="onAddItem()">
+        <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+</ion-fab>
+<ion-content>
+    <ion-list lines="full">
+        <ion-item-sliding *ngFor="let item of items;let i =index">
+            <ion-item (click)="onAddItem(item,getColor(i))"
+                      [lines]="(i===items.length-1)?'none':'full'" button="true">
+                <ion-avatar class="round-me" slot="start" [ngStyle]="{backgroundColor: getColor(i)}">
+                    {{item.name.substring(0, 1).toUpperCase()}}
+                </ion-avatar>
+                <ion-label>
+                    <h4 class="ion-text-capitalize"><strong>{{item.name}}</strong></h4>
+                    <p>Price: {{item.unit_price | number}}</p>
+                    <p>Qty&nbsp;&nbsp;&nbsp;: {{item.quantity | number}}</p>
+                </ion-label>
+                <ion-note slot="end">
+                    <h5 style="line-height: 0;"><strong>{{(item.unit_price * item.quantity)| number}}</strong></h5>
+                    <p class="ion-text-end">3 hrs ago</p>
+                </ion-note>
+            </ion-item>
+
+            <ion-item-options side="end">
+                <ion-item-option color="danger" (click)="onDeleteItem(item)">
+                    <ion-icon class="dlt-icon" slot="top" name="trash-outline"></ion-icon>
+                    Delete
+                </ion-item-option>
+            </ion-item-options>
+        </ion-item-sliding>
+
+    </ion-list>
+</ion-content>

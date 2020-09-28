@@ -1,0 +1,50 @@
+ion-toolbar {
+  --min-height: 50px;
+}
+
+ion-content {
+  --background: var(--ion-color-primary);
+
+  .w-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .w-top {
+      flex-direction: column;
+      width: 90%;
+      flex-basis: 50%;
+      justify-content: center;
+      display: flex;
+      margin: 15px auto;
+      overflow: hidden;
+      img{
+        width:60%;
+        margin: 0 auto;
+      }
+    }
+
+    .w-bottom {
+      flex-direction: column;
+      width: 90%;
+      padding-bottom: 1rem;
+      margin: 10px auto;
+      flex-basis: 50%;
+      justify-content: center;
+      display: flex;
+      background: #fff;
+      border-radius: 15px 15px;
+
+    }
+  }
+}
+
+.btn-sign-up {
+  height: 42px;
+  --border-width: 1px;
+  font-size: 1.2em;
+}
+
+.ion-c {
+  font-size: 0.8em;
+}

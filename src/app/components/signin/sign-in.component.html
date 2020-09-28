@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar (click)="onDismiss()" color="primary">
+        <ion-icon slot="start" class="ion-margin-horizontal" name="arrow-back-circle" color="light"
+                  style="font-size: 2em;"></ion-icon>
+    </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+    <div class="w-wrapper">
+        <div class="w-top">
+            <img src="https://www.ewebdigital.com/img/windows%20Application.png" alt="">
+        </div>
+        <div class="w-bottom">
+            <div class="ion-margin">
+                <form [formGroup]="form" (ngSubmit)="onLogin()">
+                    <ion-item>
+                        <ion-label position="floating">Email or Nickname*</ion-label>
+                        <ion-input formControlName="email"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">Password*</ion-label>
+                        <ion-input type="password" formControlName="password"></ion-input>
+                    </ion-item>
+                    <ion-button type="submit" expand="block" class="btn-login">
+                        Login
+                    </ion-button>
+                </form>
+            </div>
+        </div>
+    </div>
+</ion-content>
+<ion-footer [translucent]="true" class="ion-no-border">
+    <ion-toolbar>
+        <ion-button class="btn-sign-up" expand="full">
+            Don't have an account? <span class="span-sign">Sign up</span>
+        </ion-button>
+    </ion-toolbar>
+</ion-footer>
