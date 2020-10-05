@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">Homeplex</string>
-    <string name="title_activity_main">Homeplex</string>
-    <string name="package_name">io.homeplex.app</string>
-    <string name="custom_url_scheme">io.homeplex.app</string>
-</resources>
